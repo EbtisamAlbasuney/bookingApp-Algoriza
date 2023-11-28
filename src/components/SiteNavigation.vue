@@ -1,106 +1,66 @@
 <template>
-  <header class="sticky top-0 bg-weather-primary shadow-lg">
-    <nav
-      class="container flex flex-col sm:flex-row items-center gap-4 text-white py-6"
-    >
-      <RouterLink :to="{ name: 'home' }">
-        <div class="flex items-center gap-3">
-          <i class="fa-solid fa-sun text-2xl"></i>
-          <p class="text-2xl">The Local Weather</p>
+  <div>
+    <div class="">
+      <nav class="px-6 py-8 mx-auto md:flex md:justify-between md:items-center">
+        <div class="flex items-center justify-between">
+          <router-link to="/" class="text-xl font-bold md:text-2xl">
+            <i class="fa-solid fa-plane-departure text-color-primary"></i>
+            <span class="mx-1 text-gray-800">My Dream Place</span>
+          </router-link>
+          <!-- Mobile menu button -->
+          <div @click="showMenu = !showMenu" class="flex md:hidden">
+            <button
+              type="button"
+              class="text-gray-800 hover:text-gray-400 focus:outline-none focus:text-gray-400"
+            >
+              <svg viewBox="0 0 24 24" class="w-6 h-6 fill-current">
+                <path
+                  fill-rule="evenodd"
+                  d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+                ></path>
+              </svg>
+            </button>
+          </div>
         </div>
-      </RouterLink>
 
-      <div class="flex gap-3 flex-1 justify-end">
-        <i
-          class="fa-solid fa-circle-info text-xl hover:text-weather-secondary duration-150 cursor-pointer"
-          @click="toggleModal"
-        ></i>
-        <i
-          class="fa-solid fa-plus text-xl hover:text-weather-secondary duration-150 cursor-pointer"
-          @click="addCity"
-          v-if="route.query"
-        ></i>
-      </div>
-
-      <BaseModal
-        :modalActive="modalActive"
-        @close-modal="toggleModal"
-      >
-        <div class="text-black">
-          <h1 class="text-2xl mb-1">About:</h1>
-          <p class="mb-4">
-            The Local Weather allows you to track the current and
-            future weather of cities of your choosing.
-          </p>
-          <h2 class="text-2xl">How it works:</h2>
-          <ol class="list-decimal list-inside mb-4">
-            <li>
-              Search for your city by entering the name into the
-              search bar.
-            </li>
-            <li>
-              Select a city within the results, this will take
-              you to the current weather for your selection.
-            </li>
-            <li>
-              Track the city by clicking on the "+" icon in the
-              top right. This will save the city to view at a
-              later time on the home page.
-            </li>
-          </ol>
-
-          <h2 class="text-2xl">Removing a city</h2>
-          <p>
-            If you no longer wish to track a city, simply select
-            the city within the home page. At the bottom of the
-            page, there will be am option to delete the city.
-          </p>
+        <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+        <ul
+          :class="showMenu ? 'flex' : 'hidden'"
+          class="flex-col mt-8 space-y-4 md:flex md:space-y-0 md:flex-row md:items-center md:space-x-10 md:mt-0"
+        >
+          <li class="text-sm font-bold text-gray-800 hover:text-color-primary">
+            <router-link :to="{ name: 'Home' }">Home</router-link>
+          </li>
+          <li class="text-sm font-bold text-gray-800 hover:text-color-primary">
+            <router-link :to="{ name: 'About' }">About</router-link>
+          </li>
+          <li class="text-sm font-bold text-gray-800 hover:text-color-primary">
+            <router-link :to="{ name: 'Discover' }">Discover</router-link>
+          </li>
+          <li class="text-sm font-bold text-gray-800 hover:text-color-primary">
+            <router-link :to="{ name: 'Activities' }">Activities</router-link>
+          </li>
+          <li class="text-sm font-bold text-gray-800 hover:text-color-primary">
+            <router-link :to="{ name: 'Contact' }">Contact</router-link>
+          </li>
+        </ul>
+        <div class="sm:space-y-4">
+          <button
+            class="bg-color-primary rounded font-sm text-white py-1.5 px-4 md:mt-0 mt-3"
+          >
+            <router-link :to="{ name: 'Login' }">Sign In</router-link>
+          </button>
         </div>
-      </BaseModal>
-    </nav>
-  </header>
+      </nav>
+    </div>
+  </div>
 </template>
-
-<script setup>
-import { RouterLink, useRoute, useRouter } from "vue-router";
-import { uid } from "uid";
-import { ref } from "vue";
-import BaseModal from "./BaseModal.vue";
-
-const savedCities = ref([]);
-const route = useRoute();
-const router = useRouter();
-const addCity = () => {
-  if (localStorage.getItem("savedCities")) {
-    savedCities.value = JSON.parse(
-      localStorage.getItem("savedCities")
-    );
-  }
-
-  const locationObj = {
-    id: uid(),
-    state: route.params.state,
-    city: route.params.city,
-    coords: {
-      lat: route.query.lat,
-      lng: route.query.lng,
-    },
-  };
-
-  savedCities.value.push(locationObj);
-  localStorage.setItem(
-    "savedCities",
-    JSON.stringify(savedCities.value)
-  );
-
-  let query = Object.assign({}, route.query);
-  delete query.preview;
-  query.id = locationObj.id;
-  router.replace({ query });
-};
-
-const modalActive = ref(null);
-const toggleModal = () => {
-  modalActive.value = !modalActive.value;
+<script>
+export default {
+  data() {
+    return {
+      showMenu: false,
+    };
+  },
 };
 </script>
