@@ -242,9 +242,9 @@
           :key="hotel.hotel_id"
         >
           <div class="hotel-con m-5 w-2/6">
-            <img :src="hotel.property.photoUrls" alt="hotel img" />
+            <img :src="hotel.property.photoUrls" alt="hotel img" class="w-full h-full" />
           </div>
-          <div class="rate w-2/6">
+          <div class="rate w-1/6">
             <p class="mt-6">{{ hotel.property.name }}</p>
             <ul class="flex">
               <li></li>
@@ -267,14 +267,14 @@
               See availability <router-link to=""></router-link>
             </button>
           </div>
-          <div class="price w-2/6">
+          <div class="price w-2/6 ml-10">
             <button
               class="bg-red-500 rounded font-sm text-white px-4 mt-6 w-30 btn ml-6"
             >
               Book now and receive 15% off
             </button>
             <button
-              class="bg-green-700 rounded font-sm text-white px-4 w-30 btn ml-44 mt-10 py-2"
+              class="bg-green-700 rounded font-sm text-white px-2 w-30 btn ml-44 mt-10 py-2"
               v-if="hotel.property?.priceBreakdown?.strikethroughPrice?.value"
             >
               {{
@@ -291,13 +291,13 @@
 
               % off
             </button>
-            <p class="font-bold text-xl ml-36 mt-5">
-              <span class="text-danger text-lg font-normal px-4 line-through">{{
+           <div class="flex ml-3 mt-2">
+             <p class="text-danger text-lg font-normal px-2 line-through">{{
                 hotel.property?.priceBreakdown?.strikethroughPrice?.value
-              }}</span>
-              {{ hotel.property.priceBreakdown.grossPrice.value }}
-            </p>
-            <p class="text-lg ml-20 mt-2">Includes taxes and fees</p>
+              }}</p>
+              <p class="font-bold text-xl">{{ hotel.property.priceBreakdown.grossPrice.value }}</p>
+           </div>
+            <p class="text-lg ml-5 mt-2">Includes taxes and fees</p>
           </div>
         </div>
       </div>

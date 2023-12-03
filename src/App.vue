@@ -5,7 +5,6 @@
     <!-- <SiteNavigation /> -->
     <NavbarComp></NavbarComp>
     <RouterView class="mt-4" />
-    <Footer></Footer>
 
   </div>
 </template>
@@ -15,7 +14,6 @@ import { RouterView } from "vue-router";
 // import SiteNavigation from "./components/SiteNavigation.vue";
 import NavbarComp from "./components/NavbarComp.vue";
 
-import Footer from "./components/Footer.vue"
 
 </script>
 

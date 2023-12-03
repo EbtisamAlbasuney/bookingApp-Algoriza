@@ -202,6 +202,8 @@
       </div>
     </div>
     <!--footer-->
+        <Footer></Footer>
+
   </main>
 </template>
 <style scoped>
@@ -250,5 +252,7 @@
 <script setup>
 import WarningSec from "../components/WarningSec.vue";
 import SearchComp from "../components/searchComp.vue";
+import Footer from "../components/Footer.vue"
+
 
 </script>
