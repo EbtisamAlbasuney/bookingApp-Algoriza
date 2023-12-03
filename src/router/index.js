@@ -44,23 +44,16 @@ const routes = [
   {
     path: "/searchResults",
     name: "searchResults",
-    component: () => import("@/views/SearchResults"),
+    component: () => import("../views/SearchResults.vue"),
     meta: {
       title: "searchResults",
     },
   },
-  {
-    path: "/data",
-    name: "data",
-    component: () => import("@/views/sendData"),
-    meta: {
-      title: "sendData",
-    },
-  },
+ 
   {
     path: "/login",
     name: "login",
-    component: () => import("@/views/Login"),
+    component: () => import("../views/Login.vue"),
     meta: {
       title: "login",
     },

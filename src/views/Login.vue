@@ -48,7 +48,7 @@
             class="w-full mt-6 px-4 py-2 tracking-wide bg-color-primary text-white transition-colors duration-200 transform bg-blue-700 rounded-md focus:outline-none"
             type="submit"
           >
-            log in
+          login
           </button>
         </div>
       </form>

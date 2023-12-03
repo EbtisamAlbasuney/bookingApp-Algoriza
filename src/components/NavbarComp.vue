@@ -34,8 +34,11 @@
     <button
       type="button"
       class="rounded px-6 pb-2 pt-2.5 text-xs font-medium uppercase bg-[#2F80ED] text-white"
+
     >
-      login
+                <router-link :to="{name:'login'}">log in</router-link>
+
+      
     </button>
   </nav>
 </template>

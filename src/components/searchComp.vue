@@ -119,7 +119,7 @@ const getCities = async function () {
     url: "https://booking-com15.p.rapidapi.com/api/v1/hotels/searchDestination",
     params: { query: "egypt" },
     headers: {
-      'X-RapidAPI-Key': '869c9b9dd1msh55360509d1ca86cp1fa51ajsn620ce0f13929',
+     'X-RapidAPI-Key': 'eae980af47msh50ef394d7486576p1dfc26jsn090619ef6283',
     'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
     },
   };
@@ -135,7 +135,7 @@ const getCities = async function () {
 };
 
 const searchHotels = async function () {
-  const axios = require("axios");
+  // const axios = require("axios");
 
   const options = {
     method: "GET",
@@ -153,7 +153,7 @@ const searchHotels = async function () {
       currency_code: "AED",
     },
     headers: {
-     'X-RapidAPI-Key': '869c9b9dd1msh55360509d1ca86cp1fa51ajsn620ce0f13929',
+   'X-RapidAPI-Key': 'eae980af47msh50ef394d7486576p1dfc26jsn090619ef6283',
     'X-RapidAPI-Host': 'booking-com15.p.rapidapi.com'
     },
   };
