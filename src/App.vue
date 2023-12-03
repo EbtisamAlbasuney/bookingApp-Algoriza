@@ -2,7 +2,8 @@
   <div
     class="flex flex-col min-h-screen font-Roboto "
   >
-    <SiteNavigation />
+    <!-- <SiteNavigation /> -->
+    <NavbarComp></NavbarComp>
     <RouterView class="mt-4" />
     <Footer></Footer>
 
@@ -11,7 +12,9 @@
 
 <script setup>
 import { RouterView } from "vue-router";
-import SiteNavigation from "./components/SiteNavigation.vue";
+// import SiteNavigation from "./components/SiteNavigation.vue";
+import NavbarComp from "./components/NavbarComp.vue";
+
 import Footer from "./components/Footer.vue"
 
 </script>

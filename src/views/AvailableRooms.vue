@@ -185,7 +185,7 @@
                 <h2 class=" font-bold text-2xl mt-5 ml-5">20% off Use Promotional Coupon Code: <span class="text-ylow">Orlando</span></h2>
                 </div>
              
-              <div class="p-4"><img src='src/assets/images/availableRooms/tourist (1).png' alt="img of man" class="mt-20" ></div>
+              <div class="p-4"><img src='src/assets/images/availableRooms/person.svg' alt="img of man" class="mt-20 " ></div>
             </div>
           </div>
            <!-- card 2 -->

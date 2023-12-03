@@ -9,8 +9,11 @@
     <div class="flex flex-wrap justify-between mt-10 footer m-auto">
       <div class="1">
         <router-link to="/" class="text-lg font-bold md:text-xl">
-          <i class="fa-solid fa-plane-departure text-color-primary"></i>
+          <!-- <i class="fa-solid fa-plane-departure text-color-primary"></i> -->
+          <div class="flex">
+            <img src="src/assets/images/home images/bxs-plane-alt 1.svg" >
           <span class="mx-1 text-gray-800">My Dream Place</span>
+          </div>
         </router-link>
         <p class="text-lg w-9/12 text-gray-600 mt-3 ml-6">
           Your next goto companion for travel

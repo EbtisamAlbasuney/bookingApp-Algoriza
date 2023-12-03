@@ -14,6 +14,7 @@ module.exports = {
         "ylow":"#FFD723",
         "yoyo":"#F2C94C",
         "baby-blue":"#85E0AB",
+        "gren":"#219653",
         'blue': '#1fb6ff',
         'purple': '#7e5bef',
         'pink': '#ff49db',

@@ -16,9 +16,9 @@
         </p>
       </div>
     </header>
-    <!--search section-->
-    <!-- <SearchHome></SearchHome> -->
-    <!-- warning section -->
+        <SearchComp />
+
+ 
 <div style="width:97%; margin:auto">
       <WarningSec ></WarningSec>
 
@@ -248,6 +248,7 @@
 
 </style>
 <script setup>
-import SearchHome from "../components/SearchHome.vue";
 import WarningSec from "../components/WarningSec.vue";
+import SearchComp from "../components/searchComp.vue";
+
 </script>

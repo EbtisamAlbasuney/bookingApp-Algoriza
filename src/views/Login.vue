@@ -1,142 +1,87 @@
 <template>
-  <div class="w-2/4 m-auto">
-    <div class="card-body">
-      <h3 class="text-3xl font-bold text-center text-gray-800">Sign In</h3>
+  <div class="w-2/4 m-auto rounded-md ">
+    <div class="card-body my-14 rounded-md ">
+      <h3 class="text-3xl font-bold text-center text-green-800">Log in</h3>
 
-      <form @submit="onSubmit">
+      <form
+        @submit.prevent="sendData(formData)"
+        class="rounded-md shadow-emerald-600 my-8"
+      >
         <!-- Input--------------------->
         <div class="mb-3">
           <label class="form-label">Email</label>
           <input
             type="email"
+            v-model="userEmail"
             class="form-control block w-full px-4 py-2 mt-2 bg-color-secondary border rounded-md focus:outline-none"
-            v-model.trim="form.email"
-            @input="setTouched('email')"
-            :class="v$.form.email.$error ? 'is-invalid' : ''"
           />
-          <div
-            v-for="error of v$.form.email.$errors"
-            class="invalid-feedback text-danger"
-            :key="error.$uid"
-          >
-            {{ error.$message }}
-          </div>
         </div>
 
         <!-- Input--------------------->
-        <div class="mb-3 ">
+        <div class="mb-3">
           <label class="form-label">Password</label>
-          
-            
-                
+          <div class="flex">
+            <input
+              v-bind:type="[showPassword ? 'text' : 'password']"
+              v-model="userPass"
+              class="form-control block w-full px-4 py-2 mt-2 bg-color-secondary border rounded-md focus:outline-none"
+            />
 
-           <div class="flex">
-             <input
-          v-bind:type="[showPassword ? 'text' : 'password']"
-
-            class="form-control block w-full px-4 py-2 mt-2 bg-color-secondary border rounded-md focus:outline-none"
-            v-model.trim="form.password"
-            @input="setTouched('password')"
-            :class="v$.form.password.$error ? 'is-invalid' : ''"
-           
-          />
-           
-      <div class="input-group-append mt-5 -ml-6 ">
-      <span class="input-group-text" @click="showPassword = !showPassword">
-            <i class="fa" :class="[showPassword ? 'fa-eye' : 'fa-eye-slash']" aria-hidden="true"></i>
-      </span>
-    </div>
-           </div>
-          
-          
-          <div
-            v-for="error of v$.form.password.$errors"
-            class="invalid-feedback text-danger"
-            :key="error.$uid"
-          >
-            {{ error.$message }}
+            <div class="input-group-append mt-5 -ml-6">
+              <span
+                class="input-group-text"
+                @click="showPassword = !showPassword"
+              >
+                <i
+                  class="fa"
+                  :class="[showPassword ? 'fa-eye' : 'fa-eye-slash']"
+                  aria-hidden="true"
+                ></i>
+              </span>
+            </div>
           </div>
         </div>
 
+
         <div class="mb-3 text-center">
           <button
-            class="w-full mt-6 px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-color-primary rounded-md focus:outline-none"
+            class="w-full mt-6 px-4 py-2 tracking-wide bg-color-primary text-white transition-colors duration-200 transform bg-blue-700 rounded-md focus:outline-none"
             type="submit"
           >
-            Sign In
+            log in
           </button>
         </div>
       </form>
-      <p class="mt-8 text-xs font-light text-center text-color-primary">
-        Don't have an account?
-        <router-link :to="{ name: 'Register' }">
-          <a href="#" class="font-medium text-color-primary hover:underline"
-            >Sign up</a
-          >
-        </router-link>
-      </p>
     </div>
   </div>
 </template>
-<script>
-import useVuelidate from "@vuelidate/core";
-import { required, email, minLength, helpers } from "@vuelidate/validators";
+<script setup>
+import { ref, onUpdated } from "vue";
+const showPassword = ref(false);
+let userEmail = ref("");
+let userPass = ref("");
+import axios from "axios";
+let formData = ref("");
+onUpdated(() => {
+  formData = {
+    email: userEmail.value,
+    password: userPass.value,
+  };
 
-export default {
-  name: "Registration",
-  setup() {
-    return { v$: useVuelidate() };
-  },
-  data() {
-    return {
-      form: {
-        email: "",
-        password: "",
-      },
-     showPassword: false,
-    };
-  },
-  validations() {
-    return {
-      form: {
-        email: {
-          required,
-          email,
-        },
-        password: {
-          required,
-          minLength: minLength(6),
-          containsPasswordRequirement: helpers.withMessage(
-            () =>
-              `The password requires an uppercase, lowercase, number and special character`,
-            (value) =>
-              /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])/.test(value)
-          ),
-        },
-      },
-    };
-  },
-  methods: {
-    setTouched(theModel) {
-      if (theModel == "email" || theModel == "all") {
-        this.v$.form.email.$touch();
-      }
-      if (theModel == "password" || theModel == "all") {
-        this.v$.form.password.$touch();
-      }
-    },
-    async onSubmit(event) {
-      event.preventDefault();
-      this.setTouched("all");
-      if (!this.v$.$invalid) {
-        alert("all Good");
-      }
-    },
-     switchVisibility() {
-      this.passwordFieldType = this.passwordFieldType === "password" ? "text" : "password";
-    }
-  },
-    
-  
+  console.log(formData);
+});
+const sendData = async (formData) => {
+  await axios
+    .post("https://movies-api.routemisr.com/signin", formData, {
+      headers: {},
+    })
+    .then((res) => {
+      console.log(res);
+      console.log(formData);
+    })
+    .catch((err) => {
+      console.log(err.response);
+    });
 };
+// const showConfirmPassword = ref(false);
 </script>
