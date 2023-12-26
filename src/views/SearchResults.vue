@@ -321,7 +321,7 @@ console.log(cityNameGeneral.value);
 
 // ************import components****
 import SearchComp from "@/components/searchComp.vue";
-import imgStar from '../assets/images/searchResults/star-s-fill 4.svg'
+import imgStar from '../assets/images/searchResults/fill.svg'
 
 
 

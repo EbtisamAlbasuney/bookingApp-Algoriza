@@ -77,7 +77,7 @@
 </style>
 <script setup>
 import imgRec from '../assets/images/searchResults/Rectangle 25.png'
-import imgStar from '../assets/images/searchresults/star-s-fill 4.svg'
+import imgStar from '../assets/images/searchresults/fill.svg'
 import imgStarTwo from '../assets/images/searchresults/star-s-fill 5.svg'
 
 </script>
