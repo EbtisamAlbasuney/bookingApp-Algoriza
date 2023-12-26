@@ -9,7 +9,7 @@
         class="w-72 where-you-go component-custom rounded flex justify-start p-3 shadow-md"
         @click="getCities"
       >
-        <img src="src/assets/images/searchResults/location 1.svg" alt="location" class="ml-2 mr-3">
+        <img :src="imgPlace" alt="location" class="ml-2 mr-3">
         <input
           name=""
           class="relative focus:outline-none"
@@ -62,7 +62,7 @@
         id="guests"
         class="flex shadow-md component-custom rounded w-72 gap-2 p-3 justify-center items-center"
       >
-        <img src="src/assets/images/searchResults/user-square 1.svg" alt="user-square" class="ml-2 mr-3">
+        <img :src="imgSquare" alt="user-square" class="ml-2 mr-3">
         <input
           class="bg-transparent border-b-0  focus:outline-none "
           type="text"
@@ -73,7 +73,7 @@
       <div
         class="rooms flex shadow-md component-custom rounded-md w-72 p-3 gap-2 justify-center items-center"
       >
-                <img src="src/assets/images/searchResults/single_bed_FILL0_wght400_GRAD0_opsz24 1.svg" alt="room" class="ml-2 mr-3">
+                <img :src="imgRoom" alt="room" class="ml-2 mr-3">
 
         <input
           class="bg-transparent border-b-0  focus:outline-none"
@@ -95,6 +95,13 @@
 
 <script setup>
 import { ref } from "vue";
+
+import imgPlace from '../assets/images/searchResults/location 1.svg'
+import imgSquare from '../assets/images/searchResults/user-square 1.svg'
+import imgRoom from "../assets/images/searchResults/single_bed_FILL0_wght400_GRAD0_opsz24 1.svg"
+
+
+
 import { useRouter } from "vue-router";
 const cityNameGeneral = ref("");
 const citIDGeneral = ref("");

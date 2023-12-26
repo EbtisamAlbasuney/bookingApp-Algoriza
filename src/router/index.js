@@ -18,14 +18,6 @@ const routes = [
     },
   },
   {
-    path: "/activities",
-    name: "activities",
-    component: () => import("@/views/Activites.vue"),
-    meta: {
-      title: "Activities",
-    },
-  },
-  {
     path: "/about",
     name: "About",
     component: () => import("@/views/ABout.vue"),

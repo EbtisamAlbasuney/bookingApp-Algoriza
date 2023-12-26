@@ -11,7 +11,7 @@
         <router-link to="/" class="text-lg font-bold md:text-xl">
           <!-- <i class="fa-solid fa-plane-departure text-color-primary"></i> -->
           <div class="flex">
-            <img src="src/assets/images/home images/bxs-plane-alt 1.svg" >
+            <img :src="imgPlane" >
           <span class="mx-1 text-gray-800">My Dream Place</span>
           </div>
         </router-link>
@@ -80,3 +80,8 @@
   flex-direction: row-reverse
 }
 </style>
+<script setup>
+
+import imgPlane from '../assets/images/home images/bxs-plane-alt 1.svg'
+
+</script>

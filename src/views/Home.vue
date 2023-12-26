@@ -38,7 +38,7 @@
         <div class="max-w-md">
           <div class="flex rounded-lg flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 8.png"
+              :src="recEight"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">Australia</p>
@@ -49,7 +49,7 @@
         <div class="max-w-sm">
           <div class="flex rounded-lg flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 9.png"
+              :src="recNine"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">Japan</p>
@@ -60,7 +60,7 @@
         <div class="max-w-sm">
           <div class="flex rounded-lg dark:bg-gray-800 flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 10.png"
+              :src="recTen"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">NewsLanda</p>
@@ -71,7 +71,7 @@
         <div class="max-w-sm">
           <div class="flex rounded-lg dark:bg-gray-800 flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 11.png"
+              :src="recElven"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">Greece</p>
@@ -141,7 +141,7 @@
         <div class="max-w-md">
           <div class="flex rounded-lg flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 8 (2).png"
+              :src="imgEight"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">
@@ -154,7 +154,7 @@
         <div class="max-w-sm">
           <div class="flex rounded-lg flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 9 (1).png"
+              :src="imgNine"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">Recce Graham resort</p>
@@ -165,7 +165,7 @@
         <div class="max-w-sm">
           <div class="flex rounded-lg dark:bg-gray-800 flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 10 (1).png"
+              :src="imgTen"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">Fireside Dinners</p>
@@ -176,7 +176,7 @@
         <div class="max-w-sm">
           <div class="flex rounded-lg dark:bg-gray-800 flex-col">
             <img
-              src="src/assets/images/home images/Rectangle 11 (1).png"
+              :src="imgElven"
               class="w-50"
             />
             <p class="font-bold text-xl mt-5 text-dark">Oculous Inn Stay</p>
@@ -253,6 +253,23 @@
 import WarningSec from "../components/WarningSec.vue";
 import SearchComp from "../components/searchComp.vue";
 import Footer from "../components/Footer.vue"
+
+
+import recEight from '../assets/images/home images/Rectangle 8.png'
+import recNine from '../assets/images/home images/Rectangle 9.png'
+import recTen from '../assets/images/home images/Rectangle 10.png'
+import recElven from '../assets/images/home images/Rectangle 11.png'
+
+import imgEight from '../assets/images/home images/Rectangle 8 (2).png'
+import imgNine from '../assets/images/home images/Rectangle 9 (1).png'
+import imgTen from '../assets/images/home images/Rectangle 10 (1).png'
+import imgElven from '../assets/images/home images/Rectangle 11 (1).png'
+
+
+
+
+
+
 
 
 </script>

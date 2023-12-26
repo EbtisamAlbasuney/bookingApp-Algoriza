@@ -6,7 +6,7 @@
         >
           <div class="hotel-con m-5 w-2/6">
             <img
-              src="src\assets\images\searchResults\Rectangle 25.png"
+              :src="imgRec"
               alt="hotel img"
             />
           </div>
@@ -15,31 +15,31 @@
             <ul class="flex">
               <li>
                 <img
-                  src="src/assets/images/searchresults/star-s-fill 4.svg"
+                  :src="imgStar"
                   class="w-5"
                 />
               </li>
               <li>
                 <img
-                  src="src/assets/images/searchresults/star-s-fill 4.svg"
+                 :src="imgStar"
                   class="w-5"
                 />
               </li>
               <li>
                 <img
-                  src="src/assets/images/searchresults/star-s-fill 4.svg"
+                 :src="imgStar"
                   class="w-5"
                 />
               </li>
               <li>
                 <img
-                  src="src/assets/images/searchresults/star-s-fill 4.svg"
+                 :src="imgStar"
                   class="w-5"
                 />
               </li>
               <li>
                 <img
-                  src="src/assets/images/searchresults/star-s-fill 5.svg"
+                  :src="imgStarTwo"
                   class="w-2.5"
                 />
               </li>
@@ -75,3 +75,9 @@
   margin: auto;
 }
 </style>
+<script setup>
+import imgRec from '../assets/images/searchResults/Rectangle 25.png'
+import imgStar from '../assets/images/searchresults/star-s-fill 4.svg'
+import imgStarTwo from '../assets/images/searchresults/star-s-fill 5.svg'
+
+</script>

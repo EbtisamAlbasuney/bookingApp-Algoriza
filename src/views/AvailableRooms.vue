@@ -45,7 +45,7 @@
           <p class="flex mt-8 text-sm">
             <span
               ><img
-                src="src/assets/images/availableRooms/location 1.svg"
+                :src="imgLocation"
                 class="w-5"
             /></span>
             Lorem ipsum road, Tantruim-2322, Melbourne, Australia
@@ -71,19 +71,20 @@
               <ul class="text-sm">
                 <li class="flex pt-1">
                   <img
-                    src="src/assets/images/availableRooms/home-wifi 1.svg"
+                    
+                    :src="imgWifi"
                     class="w-5"
                   /><span class="pl-3">Free wifi</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/wind 1.svg"
+                    :src="imgWind"
                     class="w-5"
                   /><span class="pl-3">Air Conditioning</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/car 1.svg"
+                    :src="imgCar"
                     class="w-5"
                   /><span class="pl-3">Parking available</span>
                 </li>
@@ -91,19 +92,19 @@
               <ul class="text-sm">
                 <li class="flex pt-1">
                   <img
-                    src="src/assets/images/availableRooms/bag-tick-2 1.svg"
+                    :src="imgBag"
                     class="w-5"
                   /><span class="pl-3">Business Services</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/lifebuoy 1.svg"
+                    :src="imgLife"
                     class="w-5"
                   /><span class="pl-3">Swimming pool</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/like-1 1.svg"
+                    :src="imgLike"
                     class="w-5"
                   /><span class="pl-3">Top rated in area</span>
                 </li>
@@ -185,7 +186,7 @@
                 <h2 class=" font-bold text-2xl mt-5 ml-5">20% off Use Promotional Coupon Code: <span class="text-ylow">Orlando</span></h2>
                 </div>
              
-              <div class="p-4"><img src='src/assets/images/availableRooms/person.svg' alt="img of man" class="mt-20 " ></div>
+              <div class="p-4"><img :src='imgPerson' alt="img of man" class="mt-20 " ></div>
             </div>
           </div>
            <!-- card 2 -->
@@ -195,19 +196,19 @@
               <ul class="text-sm ml-4">
                 <li class="flex pt-1">
                   <img
-                    src="src/assets/images/availableRooms/bag-tick-2 1.svg"
+                    :src="imgBag"
                     class="w-5"
                   /><span class="pl-3">300 sq ft</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/lifebuoy 1.svg"
+                    :src="imglife"
                     class="w-5"
                   /><span class="pl-3">Sleeps 3</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/like-1 1.svg"
+                    :src="imgLike"
                     class="w-5"
                   /><span class="pl-3">1 double bed and 1 twin bed</span>
                 </li>
@@ -227,19 +228,19 @@
               <ul class="text-sm ml-4">
                 <li class="flex pt-1">
                   <img
-                    src="src/assets/images/availableRooms/bag-tick-2 1.svg"
+                    :src="imgBag"
                     class="w-5"
                   /><span class="pl-3">300 sq ft</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/lifebuoy 1.svg"
+                    :src="imgLife"
                     class="w-5"
                   /><span class="pl-3">Sleeps 3</span>
                 </li>
                 <li class="flex pt-2">
                   <img
-                    src="src/assets/images/availableRooms/like-1 1.svg"
+                    :src="imgLike"
                     class="w-5"
                   /><span class="pl-3">1 double bed and 1 twin bed</span>
                 </li>
@@ -265,6 +266,7 @@
 <script>
 import WarningSec from "../components/WarningSec.vue"
 
+
 export default {
   components: {
       WarningSec
@@ -272,6 +274,7 @@ export default {
 
   data() {
     return {
+      imgLocation:"./assets/images/availableRooms/location 1.svg",
       imgOne: "src/assets/images/availableRooms/one.png",
       imgTwo: "src/assets/images/availableRooms/two.png",
       imgThree: "src/assets/images/availableRooms/three.png",
@@ -279,6 +282,14 @@ export default {
       starTwo: "src/assets/images/availableRooms/star-s-fill 5.svg",
       cardtwo:"src/assets/images/availableRooms/Rectangle 70.png",
       cardthree:"src/assets/images/availableRooms/Rectangle 71.png",
+      imgWifi:"./assets/images/availableRooms/home-wifi 1.svg",
+      imgWind:"./assets/images/availableRooms/wind 1.svg",
+      imgCar:"./assets/images/availableRooms/car 1.svg",
+      imgBag:"./assets/images/availableRooms/bag-tick-2 1.svg",
+      imgLife:"./assets/images/availableRooms/lifebuoy 1.svg",
+      imgLike:"./assets/images/availableRooms/like-1 1.svg",
+      imgPerson:"./assets/images/availableRooms/person.svg"
+
 
     };
     

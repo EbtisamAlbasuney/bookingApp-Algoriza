@@ -12,7 +12,7 @@
               class="flex justify-around w-2/3 h-8 relative top-4 text-lg ml-4"
             >
               <img
-                src="src/assets/images/secureReservation/security-user 1.svg"
+                :src="ImgUser"
                 alt="security-user"
               />
               <p>Room 1</p>
@@ -152,7 +152,7 @@
           <div class="w-full bg-color-primary h-16 text-white rounded-lg">
             <div class="flex w-2/3 h-8 relative top-4 text-lg ml-4">
               <img
-                src="src/assets/images/secureReservation/card-tick 1.svg"
+                :src="ImgThick"
                 alt="card thick"
               />
               <p class="py-1 px-4">Payment options</p>
@@ -168,7 +168,7 @@
               class="visa bg-color-secondary w-20 h-10 rounded-md text-center cursor-pointer"
             >
               <img
-                src="src/assets/images/secureReservation/image 6.png"
+                :src="imgSix"
                 alt="visa"
                 class="m-auto mt-2"
               />
@@ -177,7 +177,7 @@
               class="visa bg-color-secondary w-20 h-10 rounded-md text-center ml-2 cursor-pointer"
             >
               <img
-                src="src/assets/images/secureReservation/image 7.png"
+                :src="imgSeven"
                 alt="visa"
                 class="m-auto mt-2"
               />
@@ -186,7 +186,7 @@
               class="visa bg-color-secondary w-20 h-10 rounded-md text-center ml-2 cursor-pointer"
             >
               <img
-                src="src/assets/images/secureReservation/image 8.png"
+                :src="imgEight"
                 alt="visa"
                 class="m-auto mt-3"
               />
@@ -195,7 +195,7 @@
               class="visa bg-color-secondary w-20 h-10 rounded-md text-center ml-2 cursor-pointer"
             >
               <img
-                src="src/assets/images/secureReservation/image 10.png"
+                :src="imgTen"
                 alt="visa"
                 class="m-auto mt-1"
               />
@@ -217,7 +217,7 @@
                   required
                 />
                 <img
-                  src="src/assets/images/secureReservation/tick-circle 1.svg"
+                  :src="imgCircle"
                   alt="thick"
                   class="px-2"
                 />
@@ -238,7 +238,7 @@
                   required
                 />
                 <img
-                  src="src/assets/images/secureReservation/tick-circle 1.svg"
+                  :key="imgCircle"
                   alt="thick"
                   class="px-2"
                 />
@@ -270,7 +270,7 @@
                     required
                   />
                   <img
-                    src="src/assets/images/secureReservation/tick-circle 1.svg"
+                    :src="imgCircle"
                     alt="thick"
                     class="px-2"
                   />
@@ -301,7 +301,7 @@
             
             >Complete Booking</button>
             <div class="flex  ml-7 mt-6">
-                <img src="src/assets/images/secureReservation/lock-circle 1.svg" alt="lock">
+                <img :src="imgLock" alt="lock">
                 <p class="mx-1">We use secure transmission and encrypted storage to protect your personal information</p>
             </div>
           
@@ -380,6 +380,14 @@ export default {
       imgTwo:"src/assets/images/secureReservation/Rectangle 68.png",
         starOne: "src/assets/images/secureReservation/star-s-fill 1.svg",
       starTwo: "src/assets/images/secureReservation/star-s-fill 5.svg",
+      imgUser:"src/assets/images/secureReservation/security-user 1.svg",
+      imgThick:"src/assets/images/secureReservation/card-tick 1.svg",
+      imgSix:"src/assets/images/secureReservation/image 6.png",
+      imgSeven:"src/assets/images/secureReservation/image 7.png",
+      imgEight:"src/assets/images/secureReservation/image 8.png",
+      imgTen:"src/assets/images/secureReservation/image 10.png",
+      imgCircle:"src/assets/images/secureReservation/tick-circle 1.svg",
+      imgLock:"src/assets/images/secureReservation/lock-circle 1.svg",
     };
   },
 };

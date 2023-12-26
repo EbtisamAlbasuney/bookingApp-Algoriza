@@ -129,7 +129,7 @@
                   >
                     <p class="mt-2">1</p>
                     <img
-                      src="src/assets/images/searchResults/star-s-fill 4.svg"
+                      :src="imgStar"
                       alt="star"
                       class="w-5"
                     />
@@ -140,7 +140,7 @@
                   >
                     <p class="mt-2">2</p>
                     <img
-                      src="src/assets/images/searchResults/star-s-fill 4.svg"
+                      :src="imgStar"
                       alt="star"
                       class="w-5"
                     />
@@ -151,7 +151,7 @@
                   >
                     <p class="mt-2">3</p>
                     <img
-                      src="src/assets/images/searchResults/star-s-fill 4.svg"
+                      :src="imgStar"
                       alt="star"
                       class="w-5"
                     />
@@ -162,7 +162,7 @@
                   >
                     <p class="mt-2">4</p>
                     <img
-                      src="src/assets/images/searchResults/star-s-fill 4.svg"
+                      :src="imgStar"
                       alt="star"
                       class="w-5"
                     />
@@ -170,7 +170,7 @@
                   <div class="item flex h-10 w-10">
                     <p class="mt-2">5</p>
                     <img
-                      src="src/assets/images/searchResults/star-s-fill 4.svg"
+                      :src="imgStar"
                       alt="star"
                       class="w-5"
                     />
@@ -321,6 +321,11 @@ console.log(cityNameGeneral.value);
 
 // ************import components****
 import SearchComp from "@/components/searchComp.vue";
+import imgStar from '../assets/images/searchResults/star-s-fill 4.svg'
+
+
+
+
 
 // ???????????????????????????? methods and functions//////////////////////////
 

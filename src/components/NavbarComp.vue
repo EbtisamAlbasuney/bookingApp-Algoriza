@@ -3,7 +3,7 @@
     class="relative flex w-full items-center justify-between bg-#FBFBFB py-3 text-black "
   >
     <div class="ml-2 flex">
-      <img src="src/assets/images/home images/bxs-plane-alt 1.svg" alt="logo" />
+      <img :src="imgUrl" alt="logo" />
       <router-link :to="{ name: 'home' }">My Dream Place</router-link>
     </div>
   <!-- Mobile menu button -->
@@ -45,6 +45,10 @@
 
 <script setup>
 import { useRouter } from "vue-router";
+ import imgUrl from '../assets/images/home images/bxs-plane-alt 1.svg'
+
+
+
 // import { ref} from "vue";
 
 const router = useRouter();
